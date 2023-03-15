@@ -3,7 +3,7 @@ package calculator;
 import java.util.Scanner;
 
 public class CalcMenu {
-    public CalcLogic calcLogic = new CalcLogic();
+    CalcLogic calcLogic = new CalcLogic();
     Scanner input = new Scanner(System.in);
 
     public void display() {
@@ -11,14 +11,15 @@ public class CalcMenu {
         int choiceFromMenu;
 
         do {
-            System.out.println("*---- Calculator ----*");
+            System.out.println("*----- Calculator v1 -----*");
             System.out.println("1 - Add");
             System.out.println("2 - Subtract");
             System.out.println("3 - Multiply");
             System.out.println("4 - Divide");
+            System.out.println("5 - Calculator v2 -> NEW");
             System.out.println("0 - Exit ");
-            System.out.println(" ");
-            System.out.println("What do you want to do?");
+            System.out.println("  What do you want to do?");
+            System.out.println("*-------------------------*");
             choiceFromMenu = input.nextInt();
 
             // calculation inputs
@@ -59,9 +60,32 @@ public class CalcMenu {
                     System.out.println("Result:");
                     System.out.println(calcLogic.divide(num1, num2));
                 }
+                case 5 -> {
+                    System.out.println("*---- Calculator v2 ----*");
+                    System.out.println("Enter first number:");
+                    int num1 = input.nextInt();
+
+                    System.out.println("What would you like to do:\n"
+                            + "+   -   *   /");
+                    String symbol = input.next();
+
+                    System.out.println("Enter second number:");
+                    int num2 = input.nextInt();
+
+                    System.out.println("Result:");
+                    double result = 0;
+
+                    switch (symbol.charAt(0)){
+                        case '+' -> result = num1 + num2;
+                        case '-' -> result = num1 - num2;
+                        case '*' -> result = num1 * num2;
+                        case '/' -> result = num1 / num2;
+                    }
+                    System.out.println(num1 + " " + symbol.charAt(0) + " " + num2 + " = " + result + "\n");
+                }
             }
             if (choiceFromMenu > 5){
-                System.out.println("Invalid choice");
+                System.out.println("Invalid choice\n");
             }
         }
         while (choiceFromMenu != 0);
