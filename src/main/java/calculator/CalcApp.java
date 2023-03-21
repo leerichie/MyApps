@@ -5,5 +5,8 @@ public class CalcApp {
 
         CalcMenu calcMenu = new CalcMenu();
         calcMenu.display();
+
+
     }
+
 }

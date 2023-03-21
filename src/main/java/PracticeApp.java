@@ -1,9 +1,10 @@
-import java.util.Scanner;
 
-public class Practice {
+
+public class PracticeApp {
     public static void main(String[] args) {
 
 
 
     }
+
 }
