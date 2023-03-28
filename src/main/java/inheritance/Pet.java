@@ -1,2 +1,8 @@
-package inheritance;public class Pet {
+package inheritance;
+
+public interface Pet {
+
+    void beFriendly();
+
+    void play();
 }

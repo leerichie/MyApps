@@ -22,13 +22,15 @@ public class Converter {
                 case 1 -> {
                     System.out.println("Enter temperature in Fahrenheit:");
                     int fahren = scanner.nextInt();
-                    System.out.println(fahren + "ºF is " + fahrenheitToCelsius(fahren) + "ºC");
+                    System.out.println(fahren + "ºF is " + fahrenheitToCelsius(fahren) + "ºC\n");
                 }
                 case 2 -> {
                     System.out.println("Enter temperature in Celsius:");
                     int cels = scanner.nextInt();
-                    System.out.println(cels + "ºF is " + celsiusToFahrenheit(cels) + "ºC");
+                    System.out.println(cels + "ºF is " + celsiusToFahrenheit(cels) + "ºC\n");
                 }
+                default ->
+                    System.out.println("Invalid choice, try again!\n");
             }
         }
         while (menuChoice != 0);
