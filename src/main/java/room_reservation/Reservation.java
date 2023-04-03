@@ -15,28 +15,10 @@ public class Reservation {
         this.checkOut = checkOut;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public LocalDate getCheckIn() {
-        return checkIn;
-    }
-
-    public LocalDate getCheckOut() {
-        return checkOut;
-    }
-
     @Override
     public String toString() {
-        return "Name='" + name + '\'' +
-                ", Surname='" + surname + '\'' +
-                ", Check-In=" + checkIn +
-                ", Check-Out=" + checkOut +
-                '}';
+        return "Full Name: " + name + " " + surname +
+                ", Check-in: " + checkIn +
+                ", Check-out: " + checkOut;
     }
 }

@@ -1,43 +1,34 @@
 package room_reservation;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class ReservationMenu {
-    private static List<Reservation> reservations = new ArrayList<>();
-    Scanner input = new Scanner(System.in);
+    private static final List<Reservation> reservations = new ArrayList<>();
 
     public static void menu(){
         Scanner input = new Scanner(System.in);
     while(true)
 
     {
-        System.out.println("*----- Ash Hotel -----*");
-        System.out.println("1 - Make a Reservation");
-        System.out.println("2 - View a Reservation");
-        System.out.println("3 - Delete a Reservation");
+        System.out.println("*------ Ash Hotel ------*");
+        System.out.println("1 - Create Reservation");
+        System.out.println("2 - View Reservation");
+        System.out.println("3 - Delete Reservation");
         System.out.println("0 - Exit");
-        System.out.println("*----------------------*\n");
+        System.out.println("*-----------------------*\n");
 
         int choice = input.nextInt();
 
         switch (choice) {
-            case 1:
-                createReservation(input);
-                break;
-            case 2:
-                viewReservation(input);
-                break;
-            case 3:
-                deleteReservation(input);
-                break;
-            case 0:
-                System.exit(0);
-            default:
-                System.out.println("Invalid choice, try again!");
+            case 1 -> createReservation(input);
+            case 2 -> viewReservation(input);
+            case 3 -> deleteReservation(input);
+            case 0 -> System.exit(0);
+            default -> System.out.println("Invalid choice, try again!");
         }
         }
     }
@@ -48,10 +39,12 @@ public class ReservationMenu {
         String name = input.next();
         System.out.println("Enter Surname:");
         String surname = input.next();
-        System.out.println("Enter check-in date:");
-        LocalDate checkInDate = LocalDate.parse(input.next());
-        System.out.println("Enter check-out date:");
-        LocalDate checkOutDate = LocalDate.parse(input.next());
+        System.out.println("Enter check-in date (dd/mm/yyyy):");
+        String inDate = input.next();
+        LocalDate checkInDate = LocalDate.parse(inDate, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        System.out.println("Enter check-out date (dd/mm/yyyy):");
+        String outDate = input.next();
+        LocalDate checkOutDate = LocalDate.parse(outDate, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         System.out.println("Reservation details: \n" + "Customer: " + name + " " + surname + "\n"
                                 + "Check-in: " + checkInDate + "\n" + "Check-out: " + checkOutDate);
         System.out.println("Reservation completed!");
@@ -61,7 +54,7 @@ public class ReservationMenu {
     }
 
     private static void viewReservation(Scanner input){
-        System.out.println("*--- View Reservation ---*");
+        System.out.println("*--- View Reservations ---*");
         if(reservations.isEmpty()){
             System.out.println("No reservations found!");
         } else {
