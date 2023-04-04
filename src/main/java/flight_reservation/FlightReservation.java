@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class FlightReservation {
     private static final int numberOfSeats = 10;
-    private static final boolean[] seatAvailability = new boolean[numberOfSeats];
+    static final boolean[] seatAvailability = new boolean[numberOfSeats];
     private static final Scanner scanner = new Scanner(System.in);
 
     static void displayMenu() {
@@ -34,7 +34,7 @@ public class FlightReservation {
         }
     }
 
-    private static void viewAvailableSeats() {
+    static void viewAvailableSeats() {
         System.out.println("Available seats:");
         for (int i = 0; i < numberOfSeats; i++) {
             if (seatAvailability[i]) {
@@ -44,7 +44,7 @@ public class FlightReservation {
         System.out.println();
     }
 
-    private static void reserveSeat() {
+    static void reserveSeat() {
         System.out.println("Enter seat number you wish to reserve:");
         int seatNumber = scanner.nextInt();
         if (seatNumber < 1 || seatNumber > numberOfSeats) {
@@ -59,7 +59,7 @@ public class FlightReservation {
         System.out.println("Seat " + seatNumber + " has been reserved.");
     }
 
-    private static void cancelReservation() {
+    static void cancelReservation() {
         System.out.println("Enter seat number you wish to cancel the reservation for:");
         int seatNumber = scanner.nextInt();
         if (seatNumber < 1 || seatNumber > numberOfSeats) {

@@ -25,7 +25,7 @@ public class CalcLogic {
     }
 
     // methods
-    public double add(int a, int b){
+    public double addition(int a, int b){
         setPreNum(a + b);
         this.totalNum += getPreNum();
         return getPreNum();

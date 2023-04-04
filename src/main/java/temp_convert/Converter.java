@@ -27,7 +27,7 @@ public class Converter {
                 case 2 -> {
                     System.out.println("Enter temperature in Celsius:");
                     int cels = scanner.nextInt();
-                    System.out.println(cels + "ºF is " + celsiusToFahrenheit(cels) + "ºC\n");
+                    System.out.println(cels + "ºC is " + celsiusToFahrenheit(cels) + "ºF\n");
                 }
                 default ->
                     System.out.println("Invalid choice, try again!\n");
@@ -43,6 +43,8 @@ public class Converter {
     }
 
     public static int celsiusToFahrenheit(int celsius){
-        return (celsius + 32) * 5/9;
+        return (celsius * 9/5) + 32;
     }
+
+
 }

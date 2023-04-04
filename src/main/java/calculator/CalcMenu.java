@@ -31,7 +31,7 @@ public class CalcMenu {
                     System.out.println("Enter second number:");
                     int num2 = input.nextInt();
                     System.out.println("Result:");
-                    System.out.println(calcLogic.add(num1, num2));
+                    System.out.println(calcLogic.addition(num1, num2));
                 }
                 case 2 -> {
                     System.out.println("*----- SUBTRACT -----*\n" +

@@ -6,12 +6,35 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 import java.util.Scanner;
 
-public class EmailBasic {
+public class EmailSend {
 
     public void emailer(){
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("*-- Ash's Email App --*");
+
+        // User chooses their personal email client to send an email from
+        System.out.println("Choose your email client:");
+        System.out.println("1 - Gmail");
+        System.out.println("2 - Wp");
+        System.out.println("3 - Outlook");
+        System.out.println("4 - Onet");
+        System.out.println("5 - o2");
+        String getEmailClient = scanner.nextLine();
+
+        switch (getEmailClient) {
+            case "1" -> getEmailClient = "smtp.gmail.com";
+            case "2" -> getEmailClient = "smtp.wp.pl";
+            case "3" -> getEmailClient = "smtp-mail.outlook.com";
+            case "4" -> getEmailClient = "smtp.poczta.onet.pl";
+            case "5" -> getEmailClient = "poczta.o2.pl";
+            default -> {
+                System.out.println("Invalid choice");
+                return;
+            }
+        }
+        // Outgoing email server
+        String host = getEmailClient;
 
         // User inputs sender email and password
         System.out.println("Enter your email:");
@@ -22,9 +45,6 @@ public class EmailBasic {
         // USER inputs recipient's email.
         System.out.println("Enter recipient's email:");
         String to = scanner.nextLine();
-
-        // Outgoing email server
-        String host = "smtp.wp.pl";
 
         // Get system properties
         Properties properties = System.getProperties();

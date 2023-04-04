@@ -9,8 +9,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class Weather {
-    public void weatherLogic() throws IOException {
+public class WeatherEN {
+    public void weatherLogicEN() throws IOException {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         // Prompt the user for the location
@@ -30,7 +30,7 @@ public class Weather {
 
         // Set up the API URL and API key
         String apiKey = "79f4d0dd8d46dedb331b5a20527be020";
-        String apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + apiKey + "&" + tempConv;
+        String apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&lang=pl" + "&appid=" + apiKey + "&" + tempConv;
 
         // Make an HTTP request to the API
         URL url = new URL(apiUrl);
@@ -75,7 +75,7 @@ public class Weather {
         System.out.println("Would you like to search again? (y/n)");
         String searchAgain = reader.readLine();
         if (searchAgain.equals("y")){
-            weatherLogic();
+            weatherLogicEN();
         } else {
             System.out.println("Goodbye :)");
         }
