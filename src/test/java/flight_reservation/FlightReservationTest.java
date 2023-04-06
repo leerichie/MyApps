@@ -7,8 +7,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.*;
 
 class FlightReservationTest {
 
@@ -37,4 +36,5 @@ class FlightReservationTest {
         assertFalse(FlightReservation.seatAvailability[4]); // Check that the seat is no longer available
         assertEquals("Enter seat number you wish to reserve:\nSeat 5 has been reserved.\n", outContent.toString()); // Check that the correct output was printed
     }
+
 }

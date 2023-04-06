@@ -64,4 +64,7 @@ public class TodoLogic {
 //        }
         }
     }
+    // for testing purposes
+    public TodoLogic(LocalDate locDate, LocalDateTime locDateTime, LocalTime locTime) {
+    }
 }

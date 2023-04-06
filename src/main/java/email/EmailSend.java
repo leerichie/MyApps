@@ -106,4 +106,7 @@ public class EmailSend {
             mex.printStackTrace();
         }
     }
+    // for testing purposes
+    public void emailer(String host, String from, String password, String to, String subject, String message) {
+    }
 }
