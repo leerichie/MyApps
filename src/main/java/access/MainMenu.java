@@ -1,12 +1,12 @@
 package access;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MainMenu {
+    private static final Scanner scanner = new Scanner(System.in);
 
-    static void mainMenu() {
-
-        Scanner scanner = new Scanner(System.in);
+    static void mainMenu() throws IOException {
 
         while(true){
             System.out.println("*--- Ash's Authentication App --*");
@@ -31,4 +31,14 @@ public class MainMenu {
             }
         }
     }
+//    static void returnToMenu(){
+//
+//        System.out.println("Press any key to return to the Main Menu and log-in");
+//        String returnToMenu = scanner.next();
+//        if (!returnToMenu.equals("")){
+//            mainMenu();
+//        } else {
+//            scanner.close();
+//        }
+//    }
 }

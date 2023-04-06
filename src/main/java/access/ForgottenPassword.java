@@ -3,6 +3,7 @@ package access;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.io.IOException;
 import java.util.Properties;
 import java.util.Scanner;
 
@@ -10,7 +11,7 @@ import static access.User.userList;
 
 public class ForgottenPassword {
 
-    static void sendPasswordReminderToEmail(){
+    static void sendPasswordReminderToEmail() throws IOException {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -78,7 +79,7 @@ public class ForgottenPassword {
                     System.out.println("Email sent successfully, check your inbox then try and log-in again.\n");
                 } else {
                     System.out.println("Goodbye :)");
-                    MainMenu.mainMenu();
+                    PressAnyKey.anyKey();
                 }
             } catch (MessagingException mex) {
                 mex.printStackTrace();
@@ -86,6 +87,7 @@ public class ForgottenPassword {
 
         } else {
             System.out.println("User not found!");
+            PressAnyKey.anyKey();
 
         }
     }

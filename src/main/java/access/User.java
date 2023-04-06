@@ -1,5 +1,6 @@
 package access;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -20,20 +21,9 @@ public class User {
         return password;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public static List<User> userList = Arrays.asList(
+    public static List<User> userList = new ArrayList<>(Arrays.asList(
             new User("Leeski", "leeski123"),
-            new User("Ashbash", "ashbash123"),
-            new User("Leeboy", "leeboy1234"),
             new User("Honeybum", "honeybum123"),
             new User("Serwi", "serwi123")
-    );
-
+    ));
 }
