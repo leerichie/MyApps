@@ -14,6 +14,7 @@ public class MainMenu {
             System.out.println(" 1 - Login");
             System.out.println(" 2 - Register new user");
             System.out.println(" 3 - Open website");
+            System.out.println(" 4 - Admin");
             System.out.println(" 0 - Exit");
             System.out.println("*-------------------------------*");
 
@@ -23,6 +24,7 @@ public class MainMenu {
                 case 1 -> UserAccounts.checkAuthentication();
                 case 2 -> UserAccounts.registerUser();
                 case 3 -> ExperimentalIdeas.searchWeb();
+                case 4 -> UserAccounts.listUsers();
                 case 0 -> {
                     System.out.println("Goodbye :)");
                     System.exit(0);
@@ -31,14 +33,4 @@ public class MainMenu {
             }
         }
     }
-//    static void returnToMenu(){
-//
-//        System.out.println("Press any key to return to the Main Menu and log-in");
-//        String returnToMenu = scanner.next();
-//        if (!returnToMenu.equals("")){
-//            mainMenu();
-//        } else {
-//            scanner.close();
-//        }
-//    }
 }

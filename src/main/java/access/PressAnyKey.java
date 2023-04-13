@@ -8,8 +8,9 @@ public class PressAnyKey {
     static void anyKey() throws IOException {
 
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("---------------------------------------");
-        System.out.println("Press any key to return to main menu...");
+        System.out.println("Press Enter <- to return to main menu...");
         while (System.in.available() == 0) {
             // Wait for any key to be pressed
         }

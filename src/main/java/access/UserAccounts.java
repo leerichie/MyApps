@@ -2,6 +2,7 @@ package access;
 
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static access.User.userList;
 
@@ -85,6 +86,27 @@ public class UserAccounts {
             System.out.println("Username created successfully!");
 
             // any key method returns to main menu
+            PressAnyKey.anyKey();
+        }
+    }
+
+    static void listUsers() throws IOException {
+
+        System.out.println("Enter admin password:");
+        String adminPass = scanner.nextLine();
+        // for numbering and incrementing
+        AtomicInteger numbering = new AtomicInteger();
+
+        if (adminPass.equals("admin")){
+            System.out.printf("%-4s %-20s %s\n", "No.", "Username", "Password");
+            System.out.println("---------------------------------------");
+            userList.stream()
+                    .forEach(user -> System.out.printf("%-4s %-20s %s\n", numbering.getAndIncrement()+1, user.getUserName(), user.getPassword()));
+
+            PressAnyKey.anyKey();
+
+        } else {
+            System.out.println("Incorrect password!");
             PressAnyKey.anyKey();
         }
     }
